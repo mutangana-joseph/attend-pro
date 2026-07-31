@@ -1,0 +1,112 @@
+/*=====================================
+    ATTENDANCE TOP
+======================================*/
+
+.attendance-top {
+
+    margin-bottom: 30px;
+
+}
+
+.attendance-info {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+
+}
+
+
+/*=====================================
+    TABLE
+======================================*/
+
+.attendance-table {
+
+    overflow-x: auto;
+
+}
+
+.attendance-table table {
+
+    min-width: 900px;
+
+}
+
+
+/*=====================================
+    RADIO BUTTONS
+======================================*/
+
+.radio-cell {
+
+    text-align: center;
+
+}
+
+.radio-cell input {
+
+    width: 20px;
+
+    height: 20px;
+
+    cursor: pointer;
+
+    accent-color: var(--primary);
+
+}
+
+
+/*=====================================
+    SAVE BUTTON
+======================================*/
+
+.save-section {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+}
+
+
+/*=====================================
+    ROW EFFECT
+======================================*/
+
+.attendance-table tbody tr {
+
+    transition: .25s;
+
+}
+
+.attendance-table tbody tr:hover {
+
+    background: #EFF6FF;
+
+}
+
+
+/*=====================================
+    RESPONSIVE
+======================================*/
+
+@media(max-width:768px) {
+
+    .attendance-info {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .save-section {
+
+        justify-content: center;
+
+    }
+
+}

@@ -1,0 +1,537 @@
+/*=====================================
+    GOOGLE FONT
+======================================*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+/*=====================================
+    CSS VARIABLES
+======================================*/
+:root{
+
+    /* Main Colors */
+    --primary:#2563EB;
+    --primary-dark:#1D4ED8;
+
+    /* Sidebar */
+    --sidebar:#1E3A8A;
+    --sidebar-hover:#1D4ED8;
+
+    /* Background */
+    --background:#F8FAFC;
+
+    /* Cards */
+    --card:#FFFFFF;
+
+    /* Text */
+    --text:#1E293B;
+    --text-light:#64748B;
+
+    /* Borders */
+    --border:#E2E8F0;
+
+    /* Status */
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    /* Shadow */
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+
+    /* Radius */
+    --radius:12px;
+
+    /* Transition */
+    --transition:.3s ease;
+
+}
+
+
+/*=====================================
+    RESET
+======================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--background);
+    color:var(--text);
+
+    font-family:"Inter",sans-serif;
+
+    min-height:100vh;
+
+}
+
+.page-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+}
+
+.page-header h1 {
+
+    margin-bottom: 8px;
+
+}
+
+.section-title {
+
+    margin-bottom: 25px;
+
+}
+
+.section-title h2 {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+
+}
+
+/*=====================================
+    MAIN CONTENT
+======================================*/
+
+.main-content {
+
+    margin-left: 260px;
+    padding: 35px;
+    min-height: 100vh;
+
+}
+
+
+/*=====================================
+    HEADINGS
+======================================*/
+
+h1,h2,h3,h4,h5{
+
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+
+}
+
+p{
+
+    color:var(--text-light);
+    line-height:1.6;
+
+}
+
+
+/*=====================================
+    LINKS
+======================================*/
+
+a{
+
+    text-decoration:none;
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+
+/*=====================================
+    IMAGES
+======================================*/
+
+img{
+
+    display:block;
+    width:100%;
+
+}
+
+
+/*=====================================
+    BUTTONS
+======================================*/
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px 22px;
+
+    border:none;
+    border-radius:var(--radius);
+
+    background:var(--primary);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:.95rem;
+
+    transition:var(--transition);
+
+}
+
+.btn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+.btn-danger{
+
+    background:var(--danger);
+
+}
+
+.btn-success{
+
+    background:var(--success);
+
+}
+
+.btn-warning{
+
+    background:var(--warning);
+
+}
+
+
+/*=====================================
+    INPUTS
+======================================*/
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:.95rem;
+
+    transition:var(--transition);
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+
+/*=====================================
+    LABELS
+======================================*/
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+
+/*=====================================
+    CARD
+======================================*/
+
+.card{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:25px;
+
+}
+
+
+/*=====================================
+    TABLE
+======================================*/
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table th{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+table td{
+
+    padding:15px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+table tr:hover{
+
+    background:#F1F5F9;
+
+}
+
+
+/*=====================================
+    CONTAINER
+======================================*/
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+/*=====================================
+    UTILITIES
+======================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{
+
+    margin-top:10px;
+
+}
+
+.mt-2{
+
+    margin-top:20px;
+
+}
+
+.mt-3{
+
+    margin-top:30px;
+
+}
+
+.mb-1{
+
+    margin-bottom:10px;
+
+}
+
+.mb-2{
+
+    margin-bottom:20px;
+
+}
+
+.mb-3{
+
+    margin-bottom:30px;
+
+}
+
+
+/*=====================================
+    ERROR & SUCCESS
+======================================*/
+
+.error{
+
+    color:var(--danger);
+
+}
+
+.success{
+
+    color:var(--success);
+
+}
+
+
+/*=====================================
+    SIDEBAR
+======================================*/
+
+.sidebar {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 260px;
+
+    height: 100vh;
+
+    background: var(--sidebar);
+
+    color: #fff;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
+
+}
+
+.logo i {
+
+    font-size: 2rem;
+
+}
+
+.logo h2 {
+
+    font-size: 1.4rem;
+
+}
+
+.sidebar nav ul {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.sidebar nav a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border-radius: 10px;
+
+    transition: var(--transition);
+
+}
+
+.sidebar nav a:hover {
+
+    background: rgba(255, 255, 255, .12);
+
+}
+
+.sidebar nav a.active {
+
+    background: #fff;
+
+    color: var(--primary);
+
+}
+
+.sidebar nav i {
+
+    width: 20px;
+
+    text-align: center;
+
+}
+
+/*=====================================
+    RESPONSIVE
+======================================*/
+
+@media(max-width:900px) {
+
+    .main-content {
+
+        margin-left: 0;
+
+        padding: 20px;
+
+    }
+
+    .page-header {
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+    }
+
+}
+
+@media(max-width:768px){
+    .container{
+
+        width:95%;
+
+    }
+
+}

@@ -1,0 +1,59 @@
+/*=====================================
+    FOOTER
+======================================*/
+
+
+.footer {
+
+    margin-left: 260px;
+
+    padding: 20px 35px;
+
+    background: #F8FAFC;
+
+    border-top: 1px solid #E2E8F0;
+
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: var(--text-light);
+
+    font-size: .9rem;
+
+}
+
+
+
+
+@media(max-width:900px) {
+
+
+    .footer {
+
+        margin-left: 0;
+
+        padding: 20px;
+
+    }
+
+
+    .footer-content {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+
+    }
+
+
+}
