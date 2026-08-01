@@ -93,42 +93,7 @@ require "includes/sidebar.php";
 
             </div>
 
-            <div class="form-group">
-
-                <label>Faculty</label>
-
-                <input
-                type="text"
-                name="faculty"
-                placeholder="Faculty">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Programme</label>
-
-                <input
-                type="text"
-                name="programme"
-                placeholder="Programme">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Academic Year</label>
-
-                <select name="year">
-
-                    <option>Year 1</option>
-                    <option>Year 2</option>
-                    <option>Year 3</option>
-                    <option>Year 4</option>
-
-                </select>
-
-            </div>
+           
 
             <div class="form-group">
 
@@ -141,16 +106,7 @@ require "includes/sidebar.php";
 
             </div>
 
-            <div class="form-group full-width">
-
-                <label>Email Address</label>
-
-                <input
-                type="email"
-                name="email"
-                placeholder="student@example.com">
-
-            </div>
+            
 
             <div class="form-group full-width">
 

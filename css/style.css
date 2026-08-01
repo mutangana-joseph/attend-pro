@@ -490,7 +490,6 @@ table tr:hover{
 .sidebar nav a.active {
 
     background: #fff;
-
     color: var(--primary);
 
 }

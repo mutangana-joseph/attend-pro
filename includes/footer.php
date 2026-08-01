@@ -1,6 +1,7 @@
 <?php
 
 echo "<link rel='stylesheet' href='css/footer.css'>";
+echo "<link rel='stylesheet' href='css/auth.css'>";
 
 ?>
 

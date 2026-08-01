@@ -70,8 +70,3 @@ require "includes/header.php";
 
 </div>
 
-<?php
-
-require "includes/footer.php";
-
-?>

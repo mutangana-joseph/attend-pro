@@ -109,6 +109,66 @@ body {
 
 }
 
+.footer{
+    margin-left: 0;
+}
+.error-box, .success-box{
+    font-size: small;
+    margin-bottom: 1rem;
+}
+.error-box {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: #ffecec;
+
+    border-left: 5px solid #dc3545;
+
+    color: #721c24;
+
+    padding: 8px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+.error-box i {
+
+    font-size: 28px;
+
+    color: #dc3545;
+
+}
+
+.error-box h3 {
+
+    margin-bottom: 6px;
+
+}
+
+.error-box p {
+
+    margin: 0;
+
+    line-height: 1.5;
+
+}
+.success-box i{
+    font-size: 28px;
+}
+.success-box{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background-color: rgba(0, 128, 0, 0.473);
+    border-radius: 10px;
+    border-left: 5px solid green;
+    padding: 10px;
+}
 @media(max-width:500px) {
 
     .auth-card {
