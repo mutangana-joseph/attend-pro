@@ -1,5 +1,7 @@
 <?php
 
+require "includes/session.php";
+
 echo "<link rel='stylesheet' href='css/dashboard.css'>";
 
 
@@ -7,6 +9,7 @@ $pageTitle = "Dashboard";
 $page = "dashboard";
 require "includes/header.php";
 require "includes/sidebar.php";
+
 
 
 ?>
@@ -27,7 +30,7 @@ require "includes/sidebar.php";
 
             <i class="fa-solid fa-circle-user"></i>
 
-            <span>Mr. Joe</span>
+            <span><?= htmlspecialchars($first_name)?></span>
 
         </div>
 
