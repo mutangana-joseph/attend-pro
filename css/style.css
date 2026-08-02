@@ -75,8 +75,9 @@ body{
 
 }
 
-.page-header {
 
+
+.page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,6 +89,14 @@ body{
 
     margin-bottom: 8px;
 
+}
+
+.page-header h1 {
+    color: #F8FAFC;
+}
+
+.page-header p {
+    color: aliceblue;
 }
 
 .section-title {

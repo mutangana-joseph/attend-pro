@@ -12,15 +12,18 @@
     align-items:center;
 
     margin-bottom:35px;
+   
 
 }
+
+
 
 .teacher-profile{
 
     display:flex;
 
     align-items:center;
-
+    color: #F8FAFC;
     gap:10px;
 
     font-weight:600;
@@ -31,7 +34,7 @@
 
     font-size:2rem;
 
-    color:var(--primary);
+    
 
 }
 

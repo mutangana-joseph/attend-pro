@@ -16,7 +16,7 @@ require "includes/sidebar.php";
 
 <main class="main-content">
 
-    <header class="top-header">
+    <header class="page-header">
 
         <div>
 
