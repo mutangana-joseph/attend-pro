@@ -550,6 +550,45 @@ table tr:hover{
 
 }
 
+
+/*=====================================
+    HIDE THESE ELEMENTS ON REPORTS GENERATE
+======================================*/
+
+@media print {
+
+    .sidebar,
+    .page-header,
+    .report-filter,
+    .report-buttons,
+    .topbar,
+    .logout-btn {
+        display: none !important;
+    }
+
+    .main-content {
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+
+}
+
 /*=====================================
     RESPONSIVE
 ======================================*/

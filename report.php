@@ -1,14 +1,85 @@
 <?php
+
+require "includes/session.php";
+require "config/db.php";
+
 echo "<link rel='stylesheet' href='css/report.css'>";
+
 $pageTitle = "Reports";
 $page = "report";
 
 require "includes/header.php";
 require "includes/sidebar.php";
+require "includes/statistics.php";
 
+/* ==========================
+   DEFAULT FILTERS
+========================== */
+
+$from = date("Y-m-d");
+$to = date("Y-m-d");
+$status = "All";
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+    if (!empty($_GET["from"])) {
+        $from = $_GET["from"];
+    }
+
+    if (!empty($_GET["to"])) {
+        $to = $_GET["to"];
+    }
+
+    if (!empty($_GET["status"])) {
+        $status = $_GET["status"];
+    }
+
+}
+
+
+/* ==========================
+   REPORT PREVIEW
+========================== */
+
+$sql = "
+SELECT
+    students.reg_number,
+    students.first_name,
+    students.last_name,
+    attendance.status,
+    attendance.attendance_date
+FROM attendance
+JOIN students
+ON attendance.student_id = students.id
+WHERE attendance.attendance_date BETWEEN ? AND ?
+";
+
+$params = [$from, $to];
+$types = "ss";
+
+if ($status != "All") {
+
+    $sql .= " AND attendance.status = ?";
+
+    $params[] = $status;
+    $types .= "s";
+
+}
+
+$sql .= "
+ORDER BY attendance.attendance_date DESC,
+students.reg_number
+LIMIT 3
+";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param($types, ...$params);
+
+$stmt->execute();
+
+$preview = $stmt->get_result();
 ?>
-
-<link rel="stylesheet" href="css/report.css">
 
 
 <main class="main-content">
@@ -45,55 +116,52 @@ Generate Report
 
 
 
-<div class="filter-grid">
+<form method="GET">
 
+<div class="filter-grid">
 
 <div class="form-group">
 
 <label>From Date</label>
 
-<input type="date">
-
+<input
+type="date"
+name="from"
+value="<?= htmlspecialchars($from) ?>">
 
 </div>
-
-
 
 <div class="form-group">
 
 <label>To Date</label>
 
-<input type="date">
-
+<input
+type="date"
+name="to"
+value="<?= htmlspecialchars($to) ?>">
 
 </div>
-
-
 
 <div class="form-group">
 
 <label>Status</label>
 
+<select name="status">
 
-<select>
+<option value="All" <?= $status=="All"?"selected":"" ?>>All</option>
 
-<option>All</option>
+<option value="Present" <?= $status=="Present"?"selected":"" ?>>Present</option>
 
-<option>Present</option>
+<option value="Absent" <?= $status=="Absent"?"selected":"" ?>>Absent</option>
 
-<option>Absent</option>
-
-<option>Late</option>
-
+<option value="Late" <?= $status=="Late"?"selected":"" ?>>Late</option>
 
 </select>
 
-
 </div>
 
-
-
 </div>
+</from>
 
 
 
@@ -111,10 +179,19 @@ Generate Report
 
 
 <button class="print-btn">
+<a
+
+href="reports/print_report.php?from=<?= urlencode($from) ?>&to=<?= urlencode($to) ?>&status=<?= urlencode($status) ?>"
+
+target="_blank"
+
+class="print-btn">
 
 <i class="fa-solid fa-print"></i>
 
 Print
+
+</a>
 
 </button>
 
@@ -122,9 +199,17 @@ Print
 
 <button class="pdf-btn">
 
+<a
+
+href="reports/pdf_report.php?from=<?= urlencode($from) ?>&to=<?= urlencode($to) ?>&status=<?= urlencode($status) ?>"
+
+class="pdf-btn">
+
 <i class="fa-solid fa-file-pdf"></i>
 
 PDF
+
+</a>
 
 </button>
 
@@ -161,7 +246,7 @@ Excel
 
 <h3>Total Records</h3>
 
-<h2>250</h2>
+<h2><?= $total ?></h2>
 
 </div>
 
@@ -178,7 +263,7 @@ Excel
 
 <h3>Present</h3>
 
-<h2>230</h2>
+<h2><?= $present ?></h2>
 
 </div>
 
@@ -196,7 +281,7 @@ Excel
 
 <h3>Absent</h3>
 
-<h2>10</h2>
+<h2><?= $absent ?></h2>
 
 </div>
 
@@ -213,7 +298,7 @@ Excel
 
 <h3>Late</h3>
 
-<h2>10</h2>
+<h2><?= $late ?></h2>
 
 </div>
 
@@ -264,51 +349,51 @@ Report Preview
 
 <tbody>
 
+<?php if($preview->num_rows > 0): ?>
+
+    <?php while($row = $preview->fetch_assoc()): ?>
+
+    <tr>
+
+        <td><?= htmlspecialchars($row["reg_number"]) ?></td>
+
+        <td>
+
+            <?= htmlspecialchars($row["first_name"]) ?>
+
+            <?= htmlspecialchars($row["last_name"]) ?>
+
+        </td>
+
+        <td><?= htmlspecialchars($row["attendance_date"]) ?></td>
+
+        <td>
+
+            <span class="status <?= strtolower($row["status"]) ?>">
+
+                <?= htmlspecialchars($row["status"]) ?>
+
+            </span>
+
+        </td>
+
+    </tr>
+
+    <?php endwhile; ?>
+
+<?php else: ?>
 
 <tr>
 
-<td>AUCA/24/001</td>
+    <td colspan="4" style="text-align:center;">
 
-<td>John Doe</td>
+        No attendance records found.
 
-<td>01 Aug 2026</td>
-
-<td>
-
-<span class="status present">
-
-Present
-
-</span>
-
-</td>
-
+    </td>
 
 </tr>
 
-
-<tr>
-
-<td>AUCA/24/002</td>
-
-<td>Jane Smith</td>
-
-<td>01 Aug 2026</td>
-
-<td>
-
-<span class="status absent">
-
-Absent
-
-</span>
-
-</td>
-
-
-</tr>
-
-
+<?php endif; ?>
 
 </tbody>
 
