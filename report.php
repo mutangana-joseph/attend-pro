@@ -217,9 +217,10 @@ PDF
 
 <button class="excel-btn">
 
+<a href="reports/excel_report.php?from=<?= $from ?>&to=<?= $to ?>&status=<?= $status ?>">
 <i class="fa-solid fa-file-excel"></i>
-
-Excel
+Export Excel
+</a>
 
 </button>
 

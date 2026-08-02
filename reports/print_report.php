@@ -59,11 +59,18 @@ $result = $stmt->get_result();
 <style>
 
 body{
+    font-family: DejaVu Sans, Arial, sans-serif;
+    color:#1f2937;
+    font-size:14px;
+}
 
-font-family:Arial,sans-serif;
-
-padding:40px;
-
+.header{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:18px;
+    border-radius:6px;
+    margin-bottom:20px;
 }
 
 h1{
@@ -81,54 +88,50 @@ margin-bottom:30px;
 }
 
 table{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-th,td{
-
-border:1px solid #ccc;
-
-padding:10px;
-
-text-align:left;
-
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
 }
 
 th{
-
-background:#1e40af;
-
-color:white;
-
+    background:#2563eb;
+    color:white;
+    padding:12px;
+    font-size:13px;
 }
 
+td{
+    padding:10px;
+    border:1px solid #ddd;
+}
+
+tbody tr:nth-child(even){
+    background:#f8fafc;
+}
 .present{
-
-color:green;
-
-font-weight:bold;
-
+    color:#166534;
+    background:#dcfce7;
+    padding:4px 10px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
 .absent{
-
-color:red;
-
-font-weight:bold;
-
+    color:#991b1b;
+    background:#fee2e2;
+    padding:4px 10px;
+    border-radius:12px;
+    font-weight:bold;
 }
 
 .late{
-
-color:orange;
-
-font-weight:bold;
-
+    color:#92400e;
+    background:#fef3c7;
+    padding:4px 10px;
+    border-radius:12px;
+    font-weight:bold;
 }
+
 
 </style>
 
