@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }
 
-$sql = "select * from students";
+$sql = "SELECT * FROM students ORDER BY reg_number";
 $result = $conn->query($sql);
 $count = 1;
 
@@ -258,8 +258,8 @@ $count = 1;
                 <td><?= $count++ ?></td>
                 <td><?=htmlspecialchars($student["reg_number"]) ?></td>
                 <td><?=htmlspecialchars($student["first_name"]) ?></td>
-                <td><?=htmlspecialchars($student["gender"]) ?></td>
                 <td><?=htmlspecialchars($student["last_name"]) ?></td>
+                <td><?=htmlspecialchars($student["gender"]) ?></td>
                 <td><?=htmlspecialchars($student["phone_number"]) ?></td>
                 <td class="actions">
 
