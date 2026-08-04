@@ -152,27 +152,7 @@ $last_attendance = $row['recorded_datetime'];
         </a>
 
     </section>
-    <section class="card recent-activity">
-
-        <h2>
-
-            <i class="fa-solid fa-clock-rotate-left"></i>
-
-            Recent Activity
-
-        </h2>
-
-        <ul>
-
-            <li>
-
-                <?= $last_attendance?> Attendance recorded 
-
-            </li>
-
-        </ul>
-
-    </section>
+    
 
     <?php endif; ?>
     <?php if(!$is_recorded): ?>
@@ -196,7 +176,8 @@ $last_attendance = $row['recorded_datetime'];
 
     </section>
     <!-- Recent Activity -->
-
+  
+    <?php endif; ?>
     <section class="card recent-activity">
 
         <h2>
@@ -211,16 +192,13 @@ $last_attendance = $row['recorded_datetime'];
 
             <li>
 
-                No attendance has been recorded today.
+                <?= $last_attendance?> Attendance recorded 
 
             </li>
 
         </ul>
 
     </section>
-
-    
-    <?php endif; ?>
 
     
 
