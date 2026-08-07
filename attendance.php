@@ -236,7 +236,7 @@ $count = 1;
                         type="radio"
                         name="status[<?= $student['id'] ?>]"
                         value="Present"
-                        checked
+                        required
                         >
                     </td>
 
@@ -244,14 +244,17 @@ $count = 1;
                         <input
                             type="radio"
                             name="status[<?= $student['id'] ?>]"
-                            value="Absent">
+                            value="Absent"
+                            required
+                            >
                     </td>
 
                     <td class="radio-cell">
                         <input
                             type="radio"
                             name="status[<?= $student['id'] ?>]"
-                            value="Late">
+                            value="Late"
+                            required>
                     </td>
 
                     </tr>
