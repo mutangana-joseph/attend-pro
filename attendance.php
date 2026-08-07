@@ -6,6 +6,7 @@ echo "<link rel='stylesheet' href='css/attendance.css'>";
 
 $pageTitle = "Attendance";
 $page = "attendance";
+$cssFile = "attendance.css";
 
 require "includes/header.php";
 require "includes/sidebar.php";
@@ -138,7 +139,7 @@ $count = 1;
 
 ?>
 
-<link rel="stylesheet" href="css/attendance.css">
+
 
 <main class="main-content">
 

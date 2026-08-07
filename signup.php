@@ -1,6 +1,7 @@
 <?php
 
 $pageTitle = "Sign Up";
+$cssFile = "auth.css";
 
 require "includes/header.php";
 require "config/db.php";
@@ -62,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 ?>
 
-<link rel="stylesheet" href="css/auth.css">
+
 
 <div class="auth-container">
 

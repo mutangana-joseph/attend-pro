@@ -13,14 +13,11 @@ $to = date("Y-m-d");
 
 $sql = "
 SELECT COUNT(*) AS total
-FROM attendance
-WHERE attendance_date
-BETWEEN ? AND ?
+FROM students
 ";
 
 $stmt = $conn->prepare($sql);
 
-$stmt->bind_param("ss", $from, $to);
 
 $stmt->execute();
 

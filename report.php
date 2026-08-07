@@ -3,10 +3,11 @@
 require "includes/session.php";
 require "config/db.php";
 
-echo "<link rel='stylesheet' href='css/report.css'>";
+
 
 $pageTitle = "Reports";
 $page = "report";
+$cssFile = "report.css";
 
 require "includes/header.php";
 require "includes/sidebar.php";

@@ -18,6 +18,7 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/<?= $cssFile ?>">
     
 
 </head>

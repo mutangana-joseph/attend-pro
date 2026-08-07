@@ -4,6 +4,7 @@ require "includes/session.php";
 
 $pageTitle = "Search Attendance";
 $page = "search";
+$cssFile = "search.css";
 
 require "includes/header.php";
 require "includes/sidebar.php";
@@ -81,7 +82,7 @@ $count = 1;
 
 ?>
 
-<link rel="stylesheet" href="css/search.css">
+
 
 <main class="main-content">
 
