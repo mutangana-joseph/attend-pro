@@ -2,11 +2,14 @@
 
 require "includes/session.php";
 
-echo "<link rel='stylesheet' href='css/dashboard.css'>";
+
 
 
 $pageTitle = "Dashboard";
 $page = "dashboard";
+$cssFile = "dashboard.css";
+
+
 require "includes/header.php";
 require "includes/sidebar.php";
 require "config/db.php";
