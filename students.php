@@ -270,7 +270,7 @@ $count = 1;
 
                         </a>
 
-                        <a href="delete_student.php?id=<?php echo htmlspecialchars($student["id"]) ?>" class="delete">
+                        <a href="delete_student.php?id=<?php echo htmlspecialchars($student["id"]) ?>" class="delete" id="delete">
 
                             <i class="fa-solid fa-trash"></i>
 
@@ -292,6 +292,16 @@ $count = 1;
     </section>
 
 </main>
+
+<script>
+   document.getElementById('delete').addEventListener('click', function(event){
+    if(!confirm("Do you really want to delete this student?")){
+        event.preventDefault();
+
+    }
+   });
+   
+</script>
 
 <?php
 
