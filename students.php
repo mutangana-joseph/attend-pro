@@ -270,7 +270,7 @@ $count = 1;
 
                         </a>
 
-                        <a href="#" class="delete">
+                        <a href="delete_student.php?id=<?php echo htmlspecialchars($student["id"]) ?>" class="delete">
 
                             <i class="fa-solid fa-trash"></i>
 
