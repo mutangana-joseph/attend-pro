@@ -1,4 +1,7 @@
-<div class="sidebar">
+<div class="show_sidebar" id="show_sidebar">
+    <i class="fas fa-bars"></i>
+</div>
+<div class="sidebar" id="sidebar">
 
     <div class="logo">
 
@@ -61,3 +64,5 @@
     </nav>
 
 </div>
+
+<script src="js/script.js"></script>

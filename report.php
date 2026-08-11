@@ -315,7 +315,7 @@ Export Excel
 
 
 
-<section class="card">
+<section class="card report-preview">
 
 
 <h2>
@@ -325,6 +325,8 @@ Export Excel
 Report Preview
 
 </h2>
+
+
 
 
 
@@ -403,7 +405,7 @@ Report Preview
 
 </table>
 
-
+</section>
 </section>
 
 

@@ -69,6 +69,7 @@ nav a:hover {
     font-size: 18px;
     color: #6B6E85;
     line-height: 1.6;
+    padding: 10px;
 }
 
 
@@ -131,6 +132,7 @@ nav a:hover {
     margin-top: 15px;
     color: #6B6E85;
     line-height: 1.5;
+   
 }
 
 
@@ -140,4 +142,23 @@ footer {
     text-align: center;
     padding: 20px;
     background: white;
+}
+
+@media(max-width:900px) {
+    .navbar {
+        gap: 6px;
+    }
+    nav{
+        gap: 10px;
+
+    }
+    nav a{
+        font-size: x-small;
+        font-weight: bolder;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

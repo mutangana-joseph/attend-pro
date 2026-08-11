@@ -593,7 +593,9 @@ table tr:hover{
 ======================================*/
 
 @media(max-width:900px) {
-
+    .sidebar{
+        display: none;
+    }
     .main-content {
 
         margin-left: 0;
@@ -603,12 +605,19 @@ table tr:hover{
     }
 
     .page-header {
-
+        margin-top: 15px;
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
 
     }
+
+    .show_sidebar {
+        color: #fff;
+        font-size: 34px;
+        position: absolute;
+        right: 10px;
+        top: 10px;   }
 
 }
 
