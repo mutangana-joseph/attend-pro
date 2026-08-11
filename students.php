@@ -264,7 +264,7 @@ $count = 1;
                 <td><?=htmlspecialchars($student["phone_number"]) ?></td>
                 <td class="actions">
 
-                        <a href="#" class="edit">
+                        <a href="update_student.php?id=<?=htmlspecialchars($student["id"]) ?>" class="edit">
 
                             <i class="fa-solid fa-pen-to-square"></i>
 
