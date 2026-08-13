@@ -162,7 +162,7 @@ value="<?= htmlspecialchars($to) ?>">
 </div>
 
 </div>
-</from>
+
 
 
 
@@ -177,7 +177,7 @@ value="<?= htmlspecialchars($to) ?>">
 Generate Report
 
 </button>
-
+</form>
 
 <button class="print-btn">
 <a
